@@ -95,23 +95,49 @@ function calcSumArray(array) {
 console.log(calcSumArray(2 + 3 + 4));
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
-function testArray(array = [1, 3]) {
+function testArray(array) {
   if (
-    (array.length[0] === 1 || array.length[0] === 3) &&
-    (array.length[1] === 1 || array.length[1] === 3)
+    (array[0] === 1 || array[0] === 3) &&
+    (array[1] === 1 || array[1] === 3)
   ) {
     return true;
   } else {
     return false;
   }
 }
-console.log(testArray());
+console.log(testArray([1, 3]));
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */
+console.log("________________________________");
+function testArrayWithOut(array1) {
+  if (
+    (array1[0] !== 1 || array1[0] !== 3) &&
+    (array1[1] !== 1 || array1[1] !== 3)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(testArrayWithOut([1, 3]));
 
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */
-function findLongestStr() {}
+function findLongestStr(arraystr) {
+  let max = arraystr[0].length;
+  arraystr.map((v) => (max = Math.max(max, v.length)));
+  let result = arraystr.filter((v) => v.length === max);
+  return result;
+}
+
+/* function longest_string(str_ara) {
+  var max = str_ara[0].length;
+  str_ara.map((v) => (max = Math.max(max, v.length)));
+  result = str_ara.filter((v) => v.length == max);
+  return result;
+}
+ */
+console.log(findLongestStr(["a", "aa", "aaa", "aaaaa", "aaaa"]));
 
 /* 12. Create a function to find the types of a given angle:
   1. Acute angle ⇒ between 0 and 90 degrees. Return `acute`.
@@ -121,6 +147,7 @@ function findLongestStr() {}
 
     Pass the angle as a parameter.
 */
+function findTypeOfAngle() {}
 
 /* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
 
